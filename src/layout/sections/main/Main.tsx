@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import photo from "./../../../assets/images/photo.webp"
-import {FlexContainer} from "../../../components/FlexContainer.tsx";
+import {FlexContainer} from "../../../components/flexContainer/FlexContainer.tsx";
 
 
 export const Main = () => {

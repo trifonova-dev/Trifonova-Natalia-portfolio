@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 type FlexContainerPropsType = {
-    direction?: string,
-    align?: string,
     justify?: string,
     wrap?: string
 }
 
 export const FlexContainer = styled.div <FlexContainerPropsType>`
     display: flex;
-    flex-direction: ${props =>props.direction || "row"};
-    justify-content: ${props =>props.justify || "flex-start"};
-    align-items: ${props =>props.align || "stretch"};
     flex-wrap: ${props =>props.wrap || "nowrap"};
+    justify-content: ${props =>props.justify || "flex-start"};
+    gap: 60px 100px;   /* расстояния как в макете */
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    
 `
