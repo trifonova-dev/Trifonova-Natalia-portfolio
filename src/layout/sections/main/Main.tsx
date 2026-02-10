@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import photo from "./../../../assets/images/photo.webp"
 import {FlexContainer} from "../../../components/flexContainer/FlexContainer.tsx";
+import { Button } from "../button/Button.tsx";
 
 
 export const Main = () => {
@@ -14,8 +15,8 @@ export const Main = () => {
                     <Name>Hello, my name is Natalia Trifonova</Name>
                     <Description>Short text with details about you, what you do or your professional career. You can add more
                         information on the about page.</Description>
-                    <ButtonOne>Projects</ButtonOne>
-                    <ButtonTwo>LinkedIn</ButtonTwo>
+                    <Button>Projects</Button>
+                    <Button>LinkedIn</Button>
                 </StyledMainInfo>
                 <Photo src={photo}/>›
             </FlexContainer>
@@ -45,20 +46,12 @@ export const Name = styled.p`
 export const Description = styled.p`
 `
 
-export const ButtonOne = styled.button`
-    
-`
-export const ButtonTwo = styled.button`
-    
-`
 
 export const Photo = styled.img`
     width: 720px;
     height: 629px;
     object-fit: cover;
     margin-left: auto;
-
-
 
 `
 
