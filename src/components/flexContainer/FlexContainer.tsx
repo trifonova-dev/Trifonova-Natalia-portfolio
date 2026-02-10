@@ -3,7 +3,8 @@ import styled from "styled-components";
 type FlexContainerPropsType = {
     justify?: string,
     wrap?: string
-    direction?: string
+    direction?: string,
+    align?: string
 
 }
 
