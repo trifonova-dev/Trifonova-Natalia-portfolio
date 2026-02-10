@@ -25,7 +25,7 @@ export const StyledIcon = styled.svg`
     height: 105px;
     display: block;
     justify-content: center;
-    //overflow: visible;
+    overflow: visible;
 `
 
 export const IconWrapper = styled.div`

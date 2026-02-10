@@ -14,11 +14,10 @@ export const Main = () => {
                     <Name>Hello, my name is Natalia Trifonova</Name>
                     <Description>Short text with details about you, what you do or your professional career. You can add more
                         information on the about page.</Description>
-
                     <ButtonOne>Projects</ButtonOne>
                     <ButtonTwo>LinkedIn</ButtonTwo>
                 </StyledMainInfo>
-                <Photo src={photo}/>
+                <Photo src={photo}/>›
             </FlexContainer>
         </StyledMain>
 
@@ -27,11 +26,14 @@ export const Main = () => {
 
 export const StyledMain = styled.main`
     min-height: 100vh;
+    align-items: center;
     background-color: rgba(83, 250, 235, 0.6);
 
 `
 export const StyledMainInfo = styled.div`
     background-color: rgba(188, 248, 70, 0.57);
+    max-width: 508px;
+    max-height: 408px;
 `
 
 export const MainH1 = styled.h1`
@@ -54,6 +56,8 @@ export const Photo = styled.img`
     width: 720px;
     height: 629px;
     object-fit: cover;
+    margin-left: auto;
+
 
 
 `
