@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import styled from "styled-components";
-import {SectionTitle} from "../skills/SectionTitle.tsx";
+import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {FlexContainer} from "../../../components/flexContainer/FlexContainer.tsx";
 import {Work} from "./work/Work.tsx";
 import girlImg from './../../../assets/images/girl.webp';

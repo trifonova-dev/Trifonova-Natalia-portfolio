@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import styled from "styled-components";
-import {SectionTitle} from "../skills/SectionTitle.tsx";
+import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {Button} from "../button/Button.tsx";
 
 export const Contacts = () => {

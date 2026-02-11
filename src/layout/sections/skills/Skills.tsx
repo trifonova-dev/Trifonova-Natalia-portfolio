@@ -2,10 +2,18 @@
 
 import styled from "styled-components";
 import {Icon} from "../../../components/icon/Icon.tsx";
-import {SectionTitle} from "./SectionTitle.tsx";
+import {SectionTitle} from "../../../components/SectionTitle.tsx";
 
 const icons = [
-    "vscode",
+
+    // {
+    //     id: "vscode",
+    //     width: 120,
+    //     height: 120,
+    //     viewBox: "0 0 120 120",
+    // },
+    //
+
     "javascript",
     "css",
     "html",

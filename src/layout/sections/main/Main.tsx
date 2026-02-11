@@ -2,24 +2,27 @@
 
 import styled from "styled-components";
 import photo from "./../../../assets/images/photo.webp"
-import {FlexContainer} from "../../../components/flexContainer/FlexContainer.tsx";
+// import {FlexContainer} from "../../../components/flexContainer/FlexContainer.tsx";
 import { Button } from "../button/Button.tsx";
 
 
 export const Main = () => {
     return (
         <StyledMain>
-            <FlexContainer justify="space-between">
-                <StyledMainInfo>
-                    <MainH1>Software Developer</MainH1>
-                    <Name>Hello, my name is Natalia Trifonova</Name>
-                    <Description>Short text with details about you, what you do or your professional career. You can add more
-                        information on the about page.</Description>
-                    <Button>Projects</Button>
-                    <Button>LinkedIn</Button>
-                </StyledMainInfo>
-                <Photo src={photo}/>›
-            </FlexContainer>
+            {/*<Container>*/}
+            {/*    <FlexWrapper justify="space-between" >*/}
+                    <StyledMainInfo>
+                        <Title>Software Developer</Title>
+                        <Name>Hello, my name is Natalia Trifonova</Name>
+                        <Description>Short text with details about you, what you do or your professional career. You can add more
+                            information on the about page.</Description>
+                        <Button>Projects</Button>
+                        <Button>LinkedIn</Button>
+                    </StyledMainInfo>
+                    <Photo src={photo}/>
+            {/*    </FlexWrapper>*/}
+            {/*</Container>*/}
+
         </StyledMain>
 
     );
@@ -37,7 +40,7 @@ export const StyledMainInfo = styled.div`
     max-height: 408px;
 `
 
-export const MainH1 = styled.h1`
+export const Title = styled.h1`
 
 `
 export const Name = styled.p`
