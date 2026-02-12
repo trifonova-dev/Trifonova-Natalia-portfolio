@@ -1,18 +1,20 @@
 // import React from 'react';
 
 import styled from "styled-components";
-import {SectionTitle} from "../../../components/SectionTitle.tsx";
-import {FlexContainer} from "../../../components/flexContainer/FlexContainer.tsx";
+import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
+import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {Work} from "./work/Work.tsx";
 import girlImg from './../../../assets/images/girl.webp';
 import markerImg from './../../../assets/images/marker.webp';
 import phoneImg from './../../../assets/images/phone.webp';
+import {Container} from "../../../components/container/Container.tsx";
 
 export const Works = () => {
     return (
         <StyledWorks>
+            <Container>
             <SectionTitle>Projects</SectionTitle>
-            <FlexContainer direction="column">
+            <FlexWrapper direction="column">
                 <Work title={"Project Name"}
                       src={girlImg}
                       text={"I created this personal project in order to show how to create an interface in Figma using a portfolio as an example."}
@@ -24,7 +26,8 @@ export const Works = () => {
                       src={phoneImg}
                       text={"You can also add in this description the type of the project, if it was for web, mobile, electron."}
                       reverse={true}/>
-            </FlexContainer>
+            </FlexWrapper>
+            </Container>
         </StyledWorks>
     );
 };

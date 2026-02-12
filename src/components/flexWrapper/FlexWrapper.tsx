@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-type FlexContainerPropsType = {
+type FlexWrapperPropsType = {
     justify?: string,
     wrap?: string
     direction?: string,
@@ -8,14 +8,12 @@ type FlexContainerPropsType = {
 
 }
 
-export const FlexContainer = styled.div <FlexContainerPropsType>`
+export const FlexWrapper = styled.div <FlexWrapperPropsType>`
     display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+
     flex-wrap: ${props =>props.wrap || "nowrap"};
     justify-content: ${props =>props.justify || "flex-start"};
     flex-direction: ${props =>props.direction || "row"};
+    align-items: ${props =>props.align};
   
 `

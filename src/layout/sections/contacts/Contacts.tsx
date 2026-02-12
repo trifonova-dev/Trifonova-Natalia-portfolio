@@ -1,19 +1,25 @@
 // import React from 'react';
 
 import styled from "styled-components";
-import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Button} from "../button/Button.tsx";
+import {Container} from "../../../components/container/Container.tsx";
+import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 
 export const Contacts = () => {
     return (
         <StyledContacts>
+            <Container>
             <SectionTitle>Contact me</SectionTitle>
+                <FlexWrapper>
             <StyledForm>
                 <Field placeholder={"Name"}></Field>
                 <Field placeholder={"Email"}></Field>
                 <Field placeholder={"Message"} as={"textarea"}/>
                 <Button type="submit">Send</Button>
             </StyledForm>
+                </FlexWrapper>
+            </Container>
         </StyledContacts>
     );
 };
