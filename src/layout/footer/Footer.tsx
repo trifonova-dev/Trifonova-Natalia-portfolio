@@ -30,9 +30,10 @@ export const Footer = () => {
 
             </SocialList>
             <Copyright>
-                Madelyn Torff 2021
+                Natalia Trifonova 2026
             </Copyright>
             </FlexWrapper>
+            {/*<img src={wave} alt="wave-footer" />*/}
             <Wave src={wave} alt="wave" className="footer-wave" />
         </StyledFooter>
     );
