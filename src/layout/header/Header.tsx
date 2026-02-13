@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import {Menu} from "../../components/menu/Menu.tsx";
-import {NameLink} from "../../components/namelink/NameLink.tsx";
+import {Logo} from "../../components/logo/Logo.tsx";
 import {Container} from "../../components/container/Container.tsx";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 
@@ -12,7 +12,7 @@ export const Header = () => {
         <StyledHeader>
             <Container>
                 <FlexWrapper justify="space-between">
-                    <NameLink/>
+                    <Logo/>
                     <Menu/>
                 </FlexWrapper>
             </Container>
