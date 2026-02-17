@@ -34,6 +34,5 @@ export const Works = () => {
 
 const StyledWorks = styled.section`
     padding: 80px 0;
-    background: rgba(255, 234, 161, 0.61);
   
 `

@@ -6,6 +6,7 @@ import {Logo} from "../../components/logo/Logo.tsx";
 import {Container} from "../../components/container/Container.tsx";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 
+
 export const Header = () => {
     return (
 
@@ -21,7 +22,6 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    background-color: pink;
     position: fixed;
     top: 0;
     left: 0;

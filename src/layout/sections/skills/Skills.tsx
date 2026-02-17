@@ -110,7 +110,6 @@ export const Skills = () => {
 
 
 export const SkillsSection = styled.section`
-    background-color: rgba(253, 129, 90, 0.55);
     padding: 60px 0;
 
 

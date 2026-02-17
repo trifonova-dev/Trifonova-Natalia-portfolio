@@ -5,19 +5,20 @@ import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Button} from "../button/Button.tsx";
 import {Container} from "../../../components/container/Container.tsx";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
+import {theme} from "../../../styles/Theme.ts";
 
 export const Contacts = () => {
     return (
         <StyledContacts>
             <Container>
-            <SectionTitle>Contact me</SectionTitle>
+                <SectionTitle>Contact me</SectionTitle>
                 <FlexWrapper>
-            <StyledForm>
-                <Field placeholder={"Name"}></Field>
-                <Field placeholder={"Email"}></Field>
-                <Field placeholder={"Message"} as={"textarea"}/>
-                <Button type="submit">Send</Button>
-            </StyledForm>
+                    <StyledForm>
+                        <Field placeholder={"Name"}></Field>
+                        <Field placeholder={"Email"}></Field>
+                        <Field placeholder={"Message"} as={"textarea"}/>
+                        <Button size="small" style={{background: theme.colors.accent}} type="submit">Send</Button>
+                    </StyledForm>
                 </FlexWrapper>
             </Container>
         </StyledContacts>
@@ -26,7 +27,6 @@ export const Contacts = () => {
 
 const StyledContacts = styled.section`
     min-height: 50vh;
-    background-color: rgba(123, 123, 255, 0.44);
 `
 
 const StyledForm = styled.form`
@@ -36,7 +36,7 @@ const StyledForm = styled.form`
     flex-direction: column;
     gap: 8px;
     margin: 0 auto;
-    
+
 `
 
 const Field = styled.input`
