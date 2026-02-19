@@ -20,9 +20,10 @@ export const Main = () => {
                         <Description>Short text with details about you, what you do or your professional career. You can
                             add more
                             information on the about page.</Description>
+                        <ButtonWrapper>
                         <Button size="normal" style={{background: theme.colors.accent}}>Projects</Button>
-                        <Button>LinkedIn</Button>
-                        {/*//bordered={true}???*/}
+                        <Button bordered>LinkedIn</Button>
+                        </ButtonWrapper>
                     </StyledMainInfo>
 
                     <PhotoWrapper>
@@ -56,12 +57,14 @@ export const StyledMain = styled.section`
 
 
 export const StyledMainInfo = styled.div`
+    display: flex;
+    flex-direction: column;
     max-width: 508px;
     max-height: 408px;
     position: relative;
     z-index: 1;
     margin-top: 110px;
-    //gap: 32px;???
+    gap: 32px;
 `
 
 export const Title = styled.h1`
@@ -90,6 +93,10 @@ export const Description = styled.p`
     color: ${theme.colors.fontTwo};
 
 `
+const ButtonWrapper = styled.div`
+display: flex;
+flex-direction: row;
+gap: 12px;`
 
 const PhotoWrapper = styled.div`
     position: absolute;

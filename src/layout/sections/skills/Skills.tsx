@@ -60,7 +60,7 @@ const icons = [
         id: "github",
         width: 105,
         height: 105,
-        viewBox: "0 0 105 105",
+        viewBox: "0 0 110 110",
     },
 
     {

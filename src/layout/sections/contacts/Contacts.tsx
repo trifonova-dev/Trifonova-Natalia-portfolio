@@ -14,10 +14,11 @@ export const Contacts = () => {
                 <SectionTitle>Contact me</SectionTitle>
                 <FlexWrapper>
                     <StyledForm>
-                        <Field placeholder={"Name"}></Field>
-                        <Field placeholder={"Email"}></Field>
-                        <Field placeholder={"Message"} as={"textarea"}/>
-                        <Button size="small" style={{background: theme.colors.accent}} type="submit">Send</Button>
+                        <Field>Name<Input/></Field>
+                        <Field>Email<Input type="email"/></Field>
+                        <Field>Message<Textarea/></Field>
+                        <Button absolute size="small" style={{background: theme.colors.accent}}
+                                type="submit">Send</Button>
                     </StyledForm>
                 </FlexWrapper>
             </Container>
@@ -26,20 +27,57 @@ export const Contacts = () => {
 };
 
 const StyledContacts = styled.section`
-    min-height: 50vh;
+    background-color: ${theme.colors.secondaryBg};
+
 `
 
 const StyledForm = styled.form`
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 24px;
     margin: 0 auto;
+    position: relative;
+    padding-bottom: 80px;
 
 `
 
-const Field = styled.input`
+const Field = styled.label`
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: ${theme.colors.secondaryBg};
+    border-radius: 8px;
+    color: ${theme.colors.fontOne};
+    
 
 `
+
+const Input = styled.input`
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid ${theme.colors.borderContact};
+    background-color: ${theme.colors.secondaryBg};
+    &:focus-visible{
+        outline: 1px solid ${theme.colors.accent};
+    }
+`;
+
+const Textarea = styled.textarea`
+    width: 100%;
+    height: 160px;
+    padding-right: 140px;
+    border-radius: 8px;
+    border: 1px solid ${theme.colors.borderContact};
+    background-color: ${theme.colors.secondaryBg};
+    resize: none;
+    &:focus-visible{
+        outline: 1px solid ${theme.colors.accent};
+    }
+`;
 

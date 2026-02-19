@@ -9,7 +9,9 @@ export const theme = {
         fontOne:"#25282B",
         fontTwo:"#828282",
         fontThree:"#000000",
-        fontTextName:"#333333"
+        fontTextName:"#333333",
+
+        borderContact: "#e8ecf4"
 
 
     }
