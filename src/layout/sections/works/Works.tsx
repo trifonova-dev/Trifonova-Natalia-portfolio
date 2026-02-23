@@ -14,7 +14,7 @@ export const Works = () => {
         <StyledWorks>
             <Container>
             <SectionTitle>Projects</SectionTitle>
-            <FlexWrapper direction="column">
+            <FlexWrapper direction="column" wrap="wrap">
                 <Work title={"Project Name"}
                       src={girlImg}
                       text={"I created this personal project in order to show how to create an interface in Figma using a portfolio as an example."}

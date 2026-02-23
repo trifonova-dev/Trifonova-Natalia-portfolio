@@ -31,8 +31,10 @@ const StyledWork = styled.div<{ reverse?: boolean }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: ${theme.colors.secondaryBg};
-    width: 992px;
+    min-width: 992px;
+    width: 100%;
     height: 524px;
     margin: 0 auto 80px;
     border-radius: 20px;
@@ -65,9 +67,11 @@ const Title = styled.h3`
 `
 
 const Image = styled.img`
-    width: 496px;
-    height: 524px;
+    min-height: 524px;
+    max-width: 496px;
+    width: 100%;
     object-fit: cover;
+    
 `
 
 const Text = styled.p`

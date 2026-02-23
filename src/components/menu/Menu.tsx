@@ -28,5 +28,9 @@ export const StyledMenu = styled.nav`
         line-height: 1.56;
         font-size: 18px;
     }
+    
+    @media ${theme.media.tablet}{
+    display: none;
+}
 `
 
