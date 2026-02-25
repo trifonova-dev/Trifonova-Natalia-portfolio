@@ -29,33 +29,54 @@ export const Work = (props: WorkPropsType) => {
 
 const StyledWork = styled.div<{ reverse?: boolean }>`
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: ${theme.colors.secondaryBg};
-    min-width: 992px;
     width: 100%;
-    height: 524px;
-    margin: 0 auto 80px;
+    max-width: 992px; /* 🔴 ВАЖНО: ограничение ширины как в макете */
+    margin: 0 auto;   /* 🔴 центрируем */
+    align-items: stretch;
+    background-color: ${theme.colors.secondaryBg};
     border-radius: 20px;
     overflow: hidden;
 
+    margin-bottom: 80px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     flex-direction: ${props => props.reverse ? "row-reverse" : "row"};
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 375px) {
+        flex-direction: column;
+        width: 345px;            /* 🔴 ширина как в макете */
+        //aspect-ratio: 345 / 526; /* 🔴 фиксируем пропорцию */
+        margin-bottom: 50px;
+    }
 `
 
 
-
 const InfoBlock = styled.div`
+    width: 50%;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    max-width: 992px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 24px;
-    width: 406px;
-    height: 232px;
-    margin-left: 50px;
+    justify-content: center;
 
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 20px; /* 🔴 уменьшили паддинг для мобильных */
+    }
+
+    @media (max-width: 375px) {
+        padding: 16px; /* 🔴 ещё меньше для маленьких экранов */
+        padding-top: 130px;    /* 🔴 верхний отступ по макету */
+        padding-bottom: 130px; /* 🔴 нижний отступ по макету */
+        padding-left: 16px;    /* 🔴 боковые отступы оставляем маленькие */
+    }
+    
 `
 
 const Title = styled.h3`
@@ -67,10 +88,22 @@ const Title = styled.h3`
 `
 
 const Image = styled.img`
-    min-height: 524px;
-    max-width: 496px;
-    width: 100%;
+    width: 50%;
+    height: auto;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* 🔴 фиксируем пропорцию */
+        height: auto;       /* 🔴 авто-высота для сохранения пропорций */
+    }
+
+    @media (max-width: 375px) {
+        aspect-ratio: unset;
+        height: 100%;   /* 🔴 картинка занимает всю высоту блока */
+    }
+    
+
     
 `
 
@@ -96,5 +129,8 @@ const Link = styled.a`
     padding-inline: 24px;
     width: 150px;
     height: 43px;
+
+    /* 🔴 Отступ от текста сверху */
+    margin-top: 24px;
 `
 

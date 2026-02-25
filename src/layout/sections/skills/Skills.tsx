@@ -131,6 +131,10 @@ export const IconsWrapper = styled.div`
         grid-template-columns: repeat(4, 1fr);
     }
 
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }    
+
     @media (max-width: 600px) {
         grid-template-columns: repeat(2, 1fr);
     }

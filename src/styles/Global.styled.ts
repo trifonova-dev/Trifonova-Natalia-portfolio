@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: ${theme.colors.primaryBg};
+
+
+        overflow-x: hidden;
+
     }
 
     a {
@@ -28,10 +32,14 @@ export const GlobalStyle = createGlobalStyle`
     ul {
         list-style: none;
     }
-    
+
     button {
         background: unset;
         border: none;
+    }
+
+    section {
+
     }
 
 `

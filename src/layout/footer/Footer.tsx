@@ -40,12 +40,53 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
+    // padding: 120px 0 180px;
+    // background-image: url("/src/assets/images/wave-footer.svg");
+    // background-repeat: no-repeat;
+    // background-position: bottom center;
+    // background-size: contain;
+    // background-color: ${theme.colors.secondaryBg};
+
+    position: relative; /* для абсолютного псевдоэлемента */
     padding: 120px 0 180px;
-    background-image: url("/src/assets/images/wave-footer.svg");
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: 100% auto;
     background-color: ${theme.colors.secondaryBg};
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /*  высота псевдоэлемента равна футеру */
+        background-image: url("/src/assets/images/wave-footer.svg");
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% auto; /растягиваем по ширине, высота подстраивается */
+        pointer-events: none;
+    }
+
+    @media (max-width: 1024px) {
+        &::before {
+            height: 200px;    
+            background-size: cover;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &::before {
+            height: 140px;      
+            background-size: cover;
+        }
+    }
+
+
+    @media (max-width: 375px) {
+        &::before {
+            height: 90px;      
+            background-size: cover;
+        }
+    }
+    
 `;
 
 const SocialList = styled.ul`

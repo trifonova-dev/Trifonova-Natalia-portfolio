@@ -23,7 +23,7 @@ export const MobileMenu = () => {
 };
 
 export const StyledMobileMenu = styled.nav`
-
+    display: none;
 
     a {
         color: ${theme.colors.fontOne};
@@ -32,8 +32,8 @@ export const StyledMobileMenu = styled.nav`
         font-size: 18px;
     }
 
-    @media ${theme.media.tablet} {
-        display: none;
+    @media ${theme.media.mobile} {
+        display: block;
     }
 
 `
@@ -83,7 +83,7 @@ const BurgerButton = styled(Button)<{ isOpen: boolean }>`
         transform: translate(-50%, -50%);
 
         ${props => props.isOpen && css<{ isOpen: boolean }>`
-            color: ${theme.colors.fontOne};
+            background-color: transparent;
 
         `}
         
@@ -114,6 +114,8 @@ const BurgerButton = styled(Button)<{ isOpen: boolean }>`
             height: 2px;
 
             background-color: ${theme.colors.fontThree};
+            transform: translateY(8px);
+            
 
             ${props => props.isOpen && css<{ isOpen: boolean }>`
                 transform: rotate(-45deg);

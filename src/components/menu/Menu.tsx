@@ -29,7 +29,7 @@ export const StyledMenu = styled.nav`
         font-size: 18px;
     }
     
-    @media ${theme.media.tablet}{
+    @media ${theme.media.mobile}{
     display: none;
 }
 `

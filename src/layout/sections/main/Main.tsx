@@ -1,14 +1,11 @@
-// import React from 'react';
-import photo from './../../../assets/images/girl.webp'
-// import mask from './../../../assets/images/mask.svg'
 
+import photo from './../../../assets/images/girl.webp'
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {Button} from "../button/Button.tsx";
 import {Container} from "../../../components/container/Container.tsx";
 import {theme} from "../../../styles/Theme.ts";
-// import {SmallMask} from "./SmallMask.tsx";
-// import {BigMask} from "./BigMask.tsx";
+
 
 
 export const Main = () => {
@@ -28,8 +25,6 @@ export const Main = () => {
                         </ButtonWrapper>
                     </StyledMainInfo>
                     <PhotoWrapper>
-                        {/*<BigMask/>*/}
-                        {/*<SmallMask/>*/}
                         <Photo src={photo} alt="hero"/>
                     </PhotoWrapper>
                 </FlexWrapper>
@@ -41,8 +36,25 @@ export const Main = () => {
 };
 
 export const StyledMain = styled.section`
-    min-height: 100vh;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; // текст слева на десктопе
+    position: relative; // для абсолютного фото
+    margin-bottom: 206px; //расстояние для десктопа по макету
+
+
+    @media (max-width: 1200px) and (min-width: 491px) {
+        margin-bottom: 80px; //промежуточный отступ для планшетов
+    }
+    
+
+    @media (max-width: 490px) {
+        margin-bottom: 0; // расстояние до Skills на мобильных
+        align-items: center; // на мобильных текст по центру
+        min-height: auto; // высота под контент
+        width: 100%;
+        
+    }
 
     ${FlexWrapper} {
         position: relative;
@@ -53,12 +65,39 @@ export const StyledMain = styled.section`
 export const StyledMainInfo = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 508px;
-    max-height: 408px;
-    position: relative;
-    z-index: 1;
     margin-top: 110px;
+    max-width: 508px;
     gap: 32px;
+    position: relative;
+    z-index: 1; 
+    margin-right: 400px; 
+
+    @media (max-width: 770px) {
+        margin-right: 300px; // уменьшаем отступ, чтобы текст не заезжал на фото
+        text-align: left; 
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+
+    /* Планшеты, когда текст уже скидывается вниз */
+    @media (max-width: 576px) and (min-width: 491px) {
+        margin-right: 0;       
+        width: 100%;           
+        max-width: 100%;       
+        text-align: left;      
+    }
+
+
+    @media (max-width: 490px) {
+        margin-right: 0;       
+        margin-top: 40px;
+        width: 100%;           
+        text-align: left;      
+        align-items: center;  
+    }
+    
+    
+    
 `
 
 export const Title = styled.h1`
@@ -90,7 +129,9 @@ export const Description = styled.p`
 const ButtonWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 12px;`
+    gap: 12px;
+    
+`
 
 const PhotoWrapper = styled.div`
     position: absolute;
@@ -115,12 +156,12 @@ const PhotoWrapper = styled.div`
     
     @media ${theme.media.mobile} {
         position: relative;
-        right: 0;
-        top: 0;
+        right: -26px;
+        top: -34px;
 
         width: 100%;
-        max-width: 375px;
-        height: 450px;
+        min-width: 375px;
+        height: 550px;
 
         -webkit-mask-image: url("/small-mask.svg");
         mask-image: url("/small-mask.svg");
