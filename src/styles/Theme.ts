@@ -11,7 +11,9 @@ export const theme = {
         fontThree:"#000000",
         fontTextName:"#333333",
 
-        borderContact: "#e8ecf4"
+        borderContact: "#e8ecf4",
+
+        inputBorderColor: "#d0d1d6"
 
     },
 

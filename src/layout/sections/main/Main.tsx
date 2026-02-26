@@ -41,6 +41,7 @@ export const StyledMain = styled.section`
     align-items: flex-start; // текст слева на десктопе
     position: relative; // для абсолютного фото
     margin-bottom: 206px; //расстояние для десктопа по макету
+    overflow-x: clip;
 
 
     @media (max-width: 1200px) and (min-width: 491px) {
@@ -156,11 +157,11 @@ const PhotoWrapper = styled.div`
     
     @media ${theme.media.mobile} {
         position: relative;
-        right: -26px;
+        right: 0;
         top: -34px;
-
-        width: 100%;
-        min-width: 375px;
+        
+        
+        min-width: 486px;
         height: 550px;
 
         -webkit-mask-image: url("/small-mask.svg");

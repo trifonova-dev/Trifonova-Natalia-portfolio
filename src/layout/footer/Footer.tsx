@@ -40,16 +40,9 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-    // padding: 120px 0 180px;
-    // background-image: url("/src/assets/images/wave-footer.svg");
-    // background-repeat: no-repeat;
-    // background-position: bottom center;
-    // background-size: contain;
-    // background-color: ${theme.colors.secondaryBg};
-
     position: relative; /* для абсолютного псевдоэлемента */
     padding: 120px 0 180px;
-    background-color: ${theme.colors.secondaryBg};
+    // background-color: ${theme.colors.secondaryBg};
 
     &::before {
         content: "";
