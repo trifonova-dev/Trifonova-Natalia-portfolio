@@ -5,20 +5,30 @@ import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {Button} from "../button/Button.tsx";
 import {Container} from "../../../components/container/Container.tsx";
 import {theme} from "../../../styles/Theme.ts";
+import Typewriter from "typewriter-effect";
 
 
 
 export const Main = () => {
     return (
-        <StyledMain>
+        <StyledMain id="about">
             <Container>
                 <FlexWrapper justify="space-between" wrap={"wrap-reverse"}>
                     <StyledMainInfo>
                         <Title>Software Developer</Title>
                         <Name>Hello, my name is Natalia Trifonova</Name>
-                        <Description>Short text with details about you, what you do or your professional career. You can
-                            add more
-                            information on the about page.</Description>
+                        <Name>
+                        </Name>
+                        <Description>
+                            <Typewriter
+                                options={{
+                                    strings: ['Short text with details about you, what you do or your professional career. You can\n' +
+                                    'add more\n' + 'information on the about page.'],
+                                    autoStart : true,
+                                    loop: true,
+                                    delay: 40,
+                                }}/>
+                            </Description>
                         <ButtonWrapper>
                             <Button size="normal" style={{background: theme.colors.accent}}>Projects</Button>
                             <Button bordered>LinkedIn</Button>

@@ -9,7 +9,7 @@ import {theme} from "../../../styles/Theme.ts";
 
 export const Contacts = () => {
     return (
-        <StyledContacts>
+        <StyledContacts id="contact">
             <Container>
                 <SectionTitle>Contact me</SectionTitle>
                 <FlexWrapper>
@@ -27,7 +27,7 @@ export const Contacts = () => {
 };
 
 const StyledContacts = styled.section`
-    
+
 
 `
 

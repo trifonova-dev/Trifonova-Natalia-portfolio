@@ -3,13 +3,24 @@
 import styled from "styled-components";
 import {theme} from "../../styles/Theme.ts";
 
-export const Menu = () => {
+type MenuItem = {
+    title: string;
+    href: string;
+};
+
+type MenuProps = {
+    menuItems: MenuItem[];
+};
+
+export const Menu = ({ menuItems }: MenuProps) => {
     return (
         <StyledMenu>
             <ul>
-                <li><a href="">About</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Contact</a></li>
+                {menuItems.map((item) => (
+                    <li key={item.href}>
+                        <a href={`#${item.href}`}>{item.title}</a>
+                    </li>
+                ))}
             </ul>
         </StyledMenu>
     );

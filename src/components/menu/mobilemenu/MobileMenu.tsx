@@ -2,20 +2,36 @@
 
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
-import {Button} from "../../sections/button/Button.tsx";
+import {Button} from "../../../layout/sections/button/Button.tsx";
+import {useState} from "react";
+
+type MenuItem = {
+    title: string;
+    href: string;
+};
+
+type MobileMenuProps = {
+    menuItems: MenuItem[];
+};
 
 
-export const MobileMenu = () => {
+export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
+    const [menuIsOpen, setmenuIsOpen] = useState(false);
+    const onBurgerBtnClick = () => {
+        setmenuIsOpen(!menuIsOpen);
+    }
     return (
         <StyledMobileMenu>
-            <BurgerButton isOpen={false}>
+            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
                 <span></span>
             </BurgerButton>
-            <MobileMenuPopup isOpen={false}>
+            <MobileMenuPopup isOpen={menuIsOpen} onClick={() => setmenuIsOpen(false)}>
                 <ul>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Contact</a></li>
+                    {menuItems.map((item) => (
+                        <li key={item.href}>
+                            <a href={`#${item.href}`}>{item.title}</a>
+                        </li>
+                    ))}
                 </ul>
             </MobileMenuPopup>
         </StyledMobileMenu>

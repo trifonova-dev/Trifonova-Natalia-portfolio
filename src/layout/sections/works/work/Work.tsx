@@ -14,7 +14,7 @@ type WorkPropsType = {
 
 export const Work = (props: WorkPropsType) => {
     return (
-        <StyledWork reverse={props.reverse}>
+        <StyledWork id="projects" reverse={props.reverse}>
             <Image src={props.src}/>
             <InfoBlock>
                 <Title>{props.title}</Title>

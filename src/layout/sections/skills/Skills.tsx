@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Container} from "../../../components/container/Container.tsx";
+import Tilt from "react-parallax-tilt";
 
 const icons = [
 
@@ -100,7 +101,21 @@ export const Skills = () => {
             <Container>
             <IconsWrapper>
                 {icons.map((icon) => (
-                    <Icon key={icon.id} iconId={icon.id} height={icon.height} width={icon.width} viewBox={icon.viewBox}/>
+                    <Tilt
+                        key={icon.id}
+                        tiltMaxAngleX={8}
+                        tiltMaxAngleY={8}
+                        perspective={1000}
+                        transitionSpeed={1200}
+                        scale={1.2}
+                        gyroscope={false}
+                    >
+                     <Icon iconId={icon.id}
+                          height={icon.height}
+                          width={icon.width}
+                          viewBox={icon.viewBox}
+                     />
+                    </Tilt>
                 ))}
             </IconsWrapper>
                 </Container>
@@ -123,8 +138,16 @@ export const IconsWrapper = styled.div`
     justify-items: center;   /* по горизонтали */
     align-items: center;     /* по вертикали */
 
+    
+    
     svg {
         display: block;
+        transition: filter 0.3s ease; /* плавный переход фильтра */
+
+        &:hover {
+            filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.15));
+        }
+        
     }
     
     @media (max-width: 1024px) {

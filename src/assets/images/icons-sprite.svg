@@ -90,8 +90,9 @@
 
 </g>
 
-
-
+    <symbol id="go-top" viewBox="0 0 24 24">
+        <path d="M12 19V7M12 7L6 13M12 7L18 13"/>
+    </symbol>
 
 
 

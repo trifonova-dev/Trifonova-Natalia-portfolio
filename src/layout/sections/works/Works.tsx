@@ -34,5 +34,6 @@ export const Works = () => {
 
 const StyledWorks = styled.section`
     padding: 80px 0;
+    position: relative;
   
 `
