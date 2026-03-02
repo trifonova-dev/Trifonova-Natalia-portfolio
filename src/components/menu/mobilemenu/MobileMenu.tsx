@@ -1,9 +1,8 @@
-// import React from 'react';
-
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
 import {Button} from "../../../layout/sections/button/Button.tsx";
 import {useState} from "react";
+import {NewMenu} from "../../../layout/header/newMenu/NewMenu.tsx";
 
 type MenuItem = {
     title: string;
@@ -13,6 +12,8 @@ type MenuItem = {
 type MobileMenuProps = {
     menuItems: MenuItem[];
 };
+
+
 
 
 export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
@@ -26,13 +27,7 @@ export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
                 <span></span>
             </BurgerButton>
             <MobileMenuPopup isOpen={menuIsOpen} onClick={() => setmenuIsOpen(false)}>
-                <ul>
-                    {menuItems.map((item) => (
-                        <li key={item.href}>
-                            <a href={`#${item.href}`}>{item.title}</a>
-                        </li>
-                    ))}
-                </ul>
+                <NewMenu menuItems={menuItems} />
             </MobileMenuPopup>
         </StyledMobileMenu>
     );

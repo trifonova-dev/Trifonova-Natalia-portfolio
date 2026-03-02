@@ -1,7 +1,7 @@
-// import React from 'react';
-
 import styled from "styled-components";
-import {theme} from "../../styles/Theme.ts";
+import {theme} from "../../../styles/Theme.ts";
+import React from "react";
+import {NewMenu} from "../../../layout/header/newMenu/NewMenu.tsx";
 
 type MenuItem = {
     title: string;
@@ -12,21 +12,15 @@ type MenuProps = {
     menuItems: MenuItem[];
 };
 
-export const Menu = ({ menuItems }: MenuProps) => {
+export const DesktopMenu: React.FC<MenuProps> = ({ menuItems }: MenuProps) => {
     return (
-        <StyledMenu>
-            <ul>
-                {menuItems.map((item) => (
-                    <li key={item.href}>
-                        <a href={`#${item.href}`}>{item.title}</a>
-                    </li>
-                ))}
-            </ul>
-        </StyledMenu>
+        <StyledDesktopMenu>
+            <NewMenu menuItems={menuItems} />
+        </StyledDesktopMenu>
     );
 };
 
-export const StyledMenu = styled.nav`
+export const StyledDesktopMenu = styled.nav`
     ul{
         display: flex;
         gap: 30px;

@@ -1,9 +1,10 @@
-import {Menu} from "../../components/menu/Menu.tsx";
+import {DesktopMenu} from "../../components/menu/desktopMenu/DesktopMenu.tsx";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Container} from "../../components/container/Container.tsx";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {MobileMenu} from "../../components/menu/mobilemenu/MobileMenu.tsx";
-import styled from "styled-components";
+import { S } from "./Header_Styles";
+import React from "react";
 
 
 // const items = ["About", "Projects", "Contact"];
@@ -29,26 +30,21 @@ const items = [
 ]
 
 
+
+
 export const Header: React.FC = () => {
     return (
 
-        <StyledHeader>
+        <S.Header>
             <Container>
                 <FlexWrapper justify="space-between">
                     <Logo/>
-                    <Menu menuItems={items}/>
+                    <DesktopMenu menuItems={items}/>
                     <MobileMenu menuItems={items}/>
                 </FlexWrapper>
             </Container>
-        </StyledHeader>
+        </S.Header>
     );
 };
 
 
-const StyledHeader = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-`
