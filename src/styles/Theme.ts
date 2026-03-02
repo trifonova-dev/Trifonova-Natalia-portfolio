@@ -20,6 +20,10 @@ export const theme = {
     media:{
         mobile: "screen and (max-width: 576px)",
         tablet: "screen and (max-width: 768px)",
+    },
+
+    animations: {
+        transition: ".2s ease-in-out"
     }
 
 

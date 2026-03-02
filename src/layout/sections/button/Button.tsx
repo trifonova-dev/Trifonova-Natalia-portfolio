@@ -19,6 +19,15 @@ export const Button = styled.button<ButtonProps>`
     padding-inline: 24px;
     cursor: pointer;
     border-radius: 8px;
+    transition: ${theme.animations.transition};
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &:active {
+        transform: translateY(-1px); /* эффект нажатия */
+    }
 
     ${props => props.absolute &&
             `

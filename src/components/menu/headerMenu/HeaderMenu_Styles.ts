@@ -58,21 +58,30 @@ export const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     left: 0;
     bottom: 0;
     z-index: 9;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: .8s ease-in-out;
 
-    ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
+
     
     ul {
         display: flex;
-        gap: 30px;
+        gap: 10px;
         flex-direction: column;
         align-items: center;
+        transition: 1.2s ease-in-out;
 
     }
+
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
+        transform: translateY(0);
+        
+        & ul {
+            gap: 30px; 
+        }
+    `}
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`

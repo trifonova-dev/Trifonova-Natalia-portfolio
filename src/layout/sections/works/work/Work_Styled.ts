@@ -105,6 +105,30 @@ const Link = styled.a`
 
     /* 🔴 Отступ от текста сверху */
     margin-top: 24px;
+
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: ${theme.colors.fontOne};
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: ${theme.animations.transition};
+        z-index: -1;
+    }
+
+    &:hover::before {
+        transform: scaleX(1);
+    }
+
+    &:hover {
+        color: ${theme.colors.fontOne};
+        background-color: ${theme.colors.accent};
+    }
 `
 
 export const S = {

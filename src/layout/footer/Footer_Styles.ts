@@ -71,6 +71,7 @@ const SocialLink = styled.a`
     &:hover {
         color: ${theme.colors.fontTwo};
     }
+    
 `
 
 const Copyright = styled.small`
