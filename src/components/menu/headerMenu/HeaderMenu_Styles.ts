@@ -17,6 +17,11 @@ export const DesktopMenu = styled.nav`
         font-family: 'Raleway', sans-serif;
         line-height: 1.56;
         font-size: 18px;
+        
+        :hover{
+            cursor: pointer;
+            
+        }
     }
     
     @media ${theme.media.mobile}{
@@ -36,6 +41,7 @@ export const MobileMenu = styled.nav`
         font-family: 'Raleway', sans-serif;
         line-height: 1.56;
         font-size: 18px;
+        
     }
 
     // @media ${theme.media.tablet} {

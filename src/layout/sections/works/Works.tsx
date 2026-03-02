@@ -8,8 +8,9 @@ import girlImg from './../../../assets/images/girl.webp';
 import markerImg from './../../../assets/images/marker.webp';
 import phoneImg from './../../../assets/images/phone.webp';
 import {Container} from "../../../components/container/Container.tsx";
+import React from "react";
 
-export const Works = () => {
+export const Works: React.FC = () => {
     return (
         <StyledWorks>
             <Container>

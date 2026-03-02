@@ -1,86 +1,25 @@
-// import React from 'react';
-
-import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Button} from "../button/Button.tsx";
 import {Container} from "../../../components/container/Container.tsx";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../../styles/Theme.ts";
+import {S} from "./Contacts_Styles.ts";
 
-export const Contacts = () => {
+export const Contacts: React.FC = () => {
     return (
-        <StyledContacts id="contact">
+        <S.Contacts id="contact">
             <Container>
                 <SectionTitle>Contact me</SectionTitle>
                 <FlexWrapper>
-                    <StyledForm>
-                        <Field>Name<Input/></Field>
-                        <Field>Email<Input type="email"/></Field>
-                        <Field>Message<Textarea/></Field>
+                    <S.Form>
+                        <S.Field>Name<S.Input/></S.Field>
+                        <S.Field>Email<S.Input type="email"/></S.Field>
+                        <S.Field>Message<S.Textarea/></S.Field>
                         <Button absolute size="small" style={{background: theme.colors.accent}}
                                 type="submit">Send</Button>
-                    </StyledForm>
+                    </S.Form>
                 </FlexWrapper>
             </Container>
-        </StyledContacts>
+        </S.Contacts>
     );
 };
-
-const StyledContacts = styled.section`
-
-
-`
-
-const StyledForm = styled.form`
-    max-width: 400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 80px;
-    
-
-`
-
-const Field = styled.label`
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
-    font-family: "Nunito", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    // background-color: ${theme.colors.secondaryBg};
-    border-radius: 8px;
-    color: ${theme.colors.fontOne};
-    
-
-`
-
-const Input = styled.input`
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid ${theme.colors.inputBorderColor};
-    background-color: ${theme.colors.secondaryBg};
-    &:focus-visible{
-        outline: 1px solid ${theme.colors.accent};
-    }
-`;
-
-const Textarea = styled.textarea`
-    width: 100%;
-    height: 160px;
-    padding-right: 140px;
-    border-radius: 8px;
-    padding: 10px;
-    border: 1px solid ${theme.colors.borderContact};
-    background-color: ${theme.colors.secondaryBg};
-    resize: none;
-    
-    &:focus-visible{
-        outline: 1px solid ${theme.colors.accent};
-    }
-`;
-

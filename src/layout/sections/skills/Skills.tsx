@@ -1,10 +1,10 @@
-// import React from 'react';
 
-import styled from "styled-components";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Container} from "../../../components/container/Container.tsx";
 import Tilt from "react-parallax-tilt";
+import {S} from "./Skills_Styles.ts"
+import React from "react";
 
 const icons = [
 
@@ -94,12 +94,12 @@ const icons = [
 
 ];
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
     return (
-        <SkillsSection>
+        <S.SkillsSection>
             <SectionTitle>Skills</SectionTitle>
             <Container>
-            <IconsWrapper>
+            <S.IconsWrapper>
                 {icons.map((icon) => (
                     <Tilt
                         key={icon.id}
@@ -117,52 +117,9 @@ export const Skills = () => {
                      />
                     </Tilt>
                 ))}
-            </IconsWrapper>
+            </S.IconsWrapper>
                 </Container>
-        </SkillsSection>
+        </S.SkillsSection>
     );
 };
-
-
-export const SkillsSection = styled.section`
-    padding: 60px 0;
-
-
-`
-
-export const IconsWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 60px;
-
-    justify-items: center;   /* по горизонтали */
-    align-items: center;     /* по вертикали */
-
-    
-    
-    svg {
-        display: block;
-        transition: filter 0.3s ease; /* плавный переход фильтра */
-
-        &:hover {
-            filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.15));
-        }
-        
-    }
-    
-    @media (max-width: 1024px) {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media (max-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-    }    
-
-    @media (max-width: 600px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-`;
-
-
 
