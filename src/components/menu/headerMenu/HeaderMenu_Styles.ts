@@ -1,40 +1,35 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
-import {Button} from "../../../layout/sections/button/Button.tsx";
-import {useState} from "react";
-import {NewMenu} from "../../../layout/header/newMenu/NewMenu.tsx";
+// import {Button} from "react-scroll";
+// import {Button} from "../../../../layout/sections/button/Button.tsx";
 
-type MenuItem = {
-    title: string;
-    href: string;
-};
+//Desktop Menu//
 
-type MobileMenuProps = {
-    menuItems: MenuItem[];
-};
-
-
-
-
-export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
-    const [menuIsOpen, setmenuIsOpen] = useState(false);
-    const onBurgerBtnClick = () => {
-        setmenuIsOpen(!menuIsOpen);
+export const DesktopMenu = styled.nav`
+    ul{
+        display: flex;
+        gap: 30px;
+        
     }
-    return (
-        <StyledMobileMenu>
-            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
-                <span></span>
-            </BurgerButton>
-            <MobileMenuPopup isOpen={menuIsOpen} onClick={() => setmenuIsOpen(false)}>
-                <NewMenu menuItems={menuItems} />
-            </MobileMenuPopup>
-        </StyledMobileMenu>
-    );
-};
-
-export const StyledMobileMenu = styled.nav`
+    
+    a{
+        color: ${theme.colors.fontOne};
+        font-family: 'Raleway', sans-serif;
+        line-height: 1.56;
+        font-size: 18px;
+    }
+    
+    @media ${theme.media.mobile}{
     display: none;
+}
+`
+
+
+//Mobile MENU//
+
+
+export const MobileMenu = styled.nav`
+    //display: none;
 
     a {
         color: ${theme.colors.fontOne};
@@ -43,9 +38,9 @@ export const StyledMobileMenu = styled.nav`
         font-size: 18px;
     }
 
-    @media ${theme.media.mobile} {
-        display: block;
-    }
+    // @media ${theme.media.tablet} {
+    //     display: block;
+    // }
 
 `
 
@@ -74,7 +69,7 @@ export const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     }
 `
 
-const BurgerButton = styled(Button)<{ isOpen: boolean }>`
+const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: fixed;
     top: 20px;
     right: 20px;
@@ -139,3 +134,9 @@ const BurgerButton = styled(Button)<{ isOpen: boolean }>`
 
 
 
+export const S = {
+    MobileMenu,
+    BurgerButton,
+    MobileMenuPopup,
+    DesktopMenu
+}

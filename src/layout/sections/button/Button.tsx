@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
 
-// import {theme} from "../../../styles/Theme.ts";
-
 interface ButtonProps {
     size?: "normal" | "small";  // размер кнопки
     bordered?: boolean; // граница кнопки
     absolute?: boolean; // передвигаем кнопку в нижний правый угол формы
+    isOpen?: boolean
 
 }
 
